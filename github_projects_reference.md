@@ -18,12 +18,12 @@ This document serves as a reference for all projects hosted on the GitHub accoun
 - **Created At**: 2026-03-22
 - **Last Updated/Pushed**: 2026-04-16
 
-### 3. Ai-HCP-CRM-agent
-- **URL**: [https://github.com/prakhar383/Ai-HCP-CRM-agent](https://github.com/prakhar383/Ai-HCP-CRM-agent)
-- **Primary Language**: JavaScript
+### 3. Ai-Chat-Based-Database-Manager
+- **URL**: [https://github.com/prakhar383/Ai-Chat-Based-Database-Manager](https://github.com/prakhar383/Ai-Chat-Based-Database-Manager)
+- **Primary Language**: Python
 - **Description**: An AI-powered Life Sciences CRM module featuring a React split-screen UI, FastAPI backend, and a LangGraph conversational agent for logging HCP interactions.
 - **Created At**: 2026-03-08
-- **Last Updated/Pushed**: 2026-03-22
+- **Last Updated/Pushed**: 2026-04-17
 
 ### 4. Minutes-of-Meeting-Generator.
 - **URL**: [https://github.com/prakhar383/Minutes-of-Meeting-Generator.](https://github.com/prakhar383/Minutes-of-Meeting-Generator.)
