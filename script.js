@@ -45,3 +45,58 @@ function switchTab(evt, tabName) {
     document.getElementById(tabName).className += " active";
     evt.currentTarget.className += " active";
 }
+
+// Contact Form AJAX Submission
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const submitBtn = document.getElementById('submit-btn');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Update UI to "Sending..."
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+        formStatus.style.display = "block";
+        formStatus.style.color = "var(--text-main)";
+        formStatus.innerText = "Wait a moment...";
+
+        const formData = new FormData(contactForm);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch("https://formsubmit.co/ajax/prakhar3823@gmail.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let res = await response.json();
+            if (response.status == 200) {
+                formStatus.style.color = "#00ff88"; // Success Green
+                formStatus.innerText = "Message sent successfully! ❤";
+                contactForm.reset();
+            } else {
+                console.log(response);
+                formStatus.style.color = "#ff4444"; // Error Red
+                formStatus.innerText = res.message || "Something went wrong.";
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            formStatus.style.color = "#ff4444";
+            formStatus.innerText = "Network error. Please try again.";
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit";
+            setTimeout(() => {
+                formStatus.style.display = "none";
+            }, 5000);
+        });
+    });
+}

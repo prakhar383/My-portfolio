@@ -266,7 +266,7 @@
 
                 <!-- Right Side -->
                 <div class="contact-right">
-                    <form class="contact-form" action="https://formsubmit.co/prakhar3823@gmail.com" method="POST">
+                    <form id="contact-form" class="contact-form">
                         <!-- FormSubmit invisible config -->
                         <input type="hidden" name="_subject" value="New Message from Portfolio!">
                         <input type="hidden" name="_captcha" value="false">
@@ -276,7 +276,8 @@
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
                         
-                        <button type="submit" class="btn-primary">Submit</button>
+                        <button type="submit" id="submit-btn" class="btn-primary">Submit</button>
+                        <div id="form-status" style="margin-top: 1rem; font-weight: 600; display: none;"></div>
                     </form>
                 </div>
             </div>
